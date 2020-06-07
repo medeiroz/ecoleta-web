@@ -1,6 +1,5 @@
 import api from "../services/api";
 import IPoint from "../interfaces/entities/IPoint";
-import IPointCreate from "../interfaces/entities/IPointCreate";
 
 export default class PointRepository {
 
@@ -21,7 +20,7 @@ export default class PointRepository {
     return response.data;
   }
 
-  async create(pointData: IPointCreate): Promise<IPoint>{
+  async create(pointData: FormData): Promise<IPoint>{
     return await api.post('points', pointData);
   }
 }

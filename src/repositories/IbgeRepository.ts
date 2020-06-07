@@ -3,6 +3,7 @@ import IUFResponse from "../interfaces/ibge/IUFResponse";
 import IUF from '../interfaces/entities/IUF';
 import ICity from '../interfaces/entities/ICity';
 import ICityResponse from '../interfaces/ibge/ICityResponse';
+import sortBy from 'lodash/sortBy';
 
 export default class IbgeRepository {
   async getUfs(): Promise<IUF[]> {
@@ -15,7 +16,7 @@ export default class IbgeRepository {
       };
     });
 
-    return ufs;
+    return sortBy(ufs, 'name');
   }
 
   async getCitiesByUf(uf: string): Promise<ICity[]> {
