@@ -8,7 +8,7 @@ import sortBy from 'lodash/sortBy';
 export default class IbgeRepository {
   async getUfs(): Promise<IUF[]> {
 
-    const response = await ibge.get<IUFResponse[]>('https://servicodados.ibge.gov.br/api/v1/localidades/estados');
+    const response = await ibge.get<IUFResponse[]>('estados');
     const ufs = response.data.map(uf => {
       return {
         uf: uf.sigla,
@@ -20,7 +20,7 @@ export default class IbgeRepository {
   }
 
   async getCitiesByUf(uf: string): Promise<ICity[]> {
-    const response = await ibge.get<ICityResponse[]>(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${uf}/municipios`);
+    const response = await ibge.get<ICityResponse[]>(`estados/${uf}/municipios`);
     const cities = response.data.map(city => {
       return {
         name: city.nome
