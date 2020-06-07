@@ -79,7 +79,7 @@ To access the layout use [Figma](https://www.figma.com/file/1SxgOMojOB2zYT0Mdk28
 
 ## :information_source: How To Use
 
-To clone and run this application, you'll need [Git]([git]), [Node.js][nodejs] + [Yarn][yarn] or [Npm][npm] installed on your computer.
+To clone and run this application, you'll need [Git]([https://git-scm.com]), [Node.js][nodejs] + [Yarn][yarn] or [Npm][npm] installed on your computer.
 
 From your command line:
 
